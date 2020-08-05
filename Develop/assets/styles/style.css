@@ -33,6 +33,7 @@ header {
 .card-header {
   text-align: center;
   color: rgb(153, 202, 153);
+  text-shadow: black;
 }
 
 .card {
