@@ -1,23 +1,48 @@
 // Assignment Code
 
-/* Collect user input for password criteria
-  1. length (8 to 128 characters)
-  2. symbols (numbers, uppercase letters, lowercase letters, numbers)
-  3. randomize
-  4. display password on screen for user
-*/
+// Collect user input for password criteria
+//  1. length (8 to 128 characters)
 
-// prompts
+//  Number entered creates password length
+  
+for (characters i=8; i <= 128; i++);
+  
 
-// user clicks Generate Password Button
+ // 2. CHARACTERS (numbers, uppercase letters, lowercase letters, symbols)
 
-// Add event listener to generate button
+  // if user checks box, include numbers
+  var numbers = document.querySelector("#numbers");
+  console.log(numbers);
+
+  // if user checks box, include lower case
+
+  var lowCase = document.querySelector("#lowCase");
+  console.log(lowCase);
+
+  // if user checks box, include upper case
+
+  var uppCase = document.querySelector("#uppCase");
+  console.log(uppCase);
+
+  // if user checks box, include symbols
+
+  var symbols = document.querySelector("#symbols")
+  console.log(symbols);
+
+  // VARIABLE to combine these selections
+  
+  if userSelects (enter into new variable)
+
+ // 3. randomize
+
+  randomize characters
+  randomize order of characters
+
+//  4. display password on screen for user
 
 
-// collect user input for criteria
 
-
-// PROMPTS
+/* PROMPTS
 
 var length = prompt("How many characters do you want your password to have (from 8 to 128?");
 
@@ -29,6 +54,9 @@ var digits = confirm("do you want digits?")
 
 var symbols = confirm("do you want special symbols?")
 
+*/
+
+
 
 // generate symbol
 
@@ -37,7 +65,6 @@ function getRandomSymbol () {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 console.log(getRandomSymbol());
-
 
 
 // GENERATE BUTTON
@@ -49,7 +76,6 @@ console.log(generateBtn);
 
 function generatePassword () {
   // set password length
-  
 }
 
 // Write password to the #password input
@@ -60,20 +86,10 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
-  
 }
 
 generateBtn.addEventListener("click", writePassword);
 
-
-// KEYS
-
-const randomCharacters {
-  lower: getRandomLower,
-  upper: getRandomUpper,
-  digit: getRandomDigit,
-  symbol: getRandomSymbol
-}
 
 
 // GENERATE CHARACTERS
@@ -94,9 +110,8 @@ console.log(getRandomUpper());
 
 // generate number
 
-function getRandomDigit () {
-  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
-}
-console.log(getRandomDigit());
+var num = Math.floor(Math.random) * 10);
+console.log(num);
+
 
 
