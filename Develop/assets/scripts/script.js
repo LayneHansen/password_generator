@@ -5,7 +5,9 @@
 
 //  Number entered creates password length
   
-for (characters i=8; i <= 128; i++);
+  // for (characters i=8; i <= 128; i++);
+
+  let charAmount = document.querySelector("#characters")
   
 
  // 2. CHARACTERS (numbers, uppercase letters, lowercase letters, symbols)
@@ -31,12 +33,14 @@ for (characters i=8; i <= 128; i++);
 
   // VARIABLE to combine these selections
   
-  if userSelects (enter into new variable)
+  // if userSelects (enter into new variable)
 
- // 3. randomize
+ /* 3. randomize
 
   randomize characters
   randomize order of characters
+
+*/
 
 //  4. display password on screen for user
 
@@ -110,7 +114,7 @@ console.log(getRandomUpper());
 
 // generate number
 
-var num = Math.floor(Math.random) * 10);
+var num = Math.floor(Math.random() * 10);
 console.log(num);
 
 
