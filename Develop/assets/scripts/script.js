@@ -1,23 +1,24 @@
 // Assignment Code
 
-// Collect user input for password criteria
-//  1. length (8 to 128 characters)
+/* 
 
-//  Number entered creates password length
+Collect user input for password criteria
+1. length (8 to 128 characters)
+
+  Number entered creates password length
   
-  // for (characters i=8; i <= 128; i++);
+  for (characters i=8; i <= 128; i++);
 
- // let charAmount = document.querySelector("#charAmount")
+  let charAmount = document.querySelector("#charAmount")
 
+2. CHARACTERS (numbers, uppercase letters, lowercase letters, symbols)
 
-  // 2. CHARACTERS (numbers, uppercase letters, lowercase letters, symbols)
-
-  /* if user checks box, include numbers
+  if user checks box, include numbers
   
   var numbers = document.querySelector("#numbers");
   console.log(numbers);
 
-  // if user checks box, include lower case
+  if user checks box, include lower case
 
   var lowCase = document.querySelector("#lowCase");
   console.log(lowCase);
@@ -32,11 +33,6 @@
   var symbols = document.querySelector("#symbols")
   console.log(symbols);
 
-  */
-
-  
-  /*
-
   EVENT LISTENERS FOR BOX CHECKS
 
   numbers.addEventListener('checkbox', charTypes);
@@ -44,44 +40,31 @@
   uppCase.addEventListener('checkbox', charTypes);
   symbols.addEventListener('checkbox', charTypes);
 
-  */
 
-  // CREATE charTypes variable
+  CREATE charTypes variable
 
-  // charTypes () {}
+  charTypes () {}
 
 
-  // VARIABLE to combine these selections
+  VARIABLE to combine these selections
   
-  // if userSelects (enter into new variable)
+  if userSelects (enter into new variable)
 
- /* 3. randomize
+3. randomize
 
   randomize characters
   randomize order of characters
 
-*/
 
-//  4. display password on screen for user
-
-
-
-/* PROMPTS
-
-var length = prompt("How many characters do you want your password to have (from 8 to 128?");
-
-var lowerCase = confirm("Do you want lower case letters?");
-
-var upperCase = confirm("Do you want upper case letters?");
-
-var digits = confirm("do you want digits?")
-
-var symbols = confirm("do you want special symbols?")
+4. display password on screen for user
 
 */
 
 
-// GENERATE BUTTON
+
+/* 
+
+GENERATE BUTTON
 
 var generateBtn = document.querySelector("#generate");
 console.log(generateBtn);
@@ -101,21 +84,29 @@ console.log(generateBtn);
 
 */
 
-// const charAmount = document.querySelector("#charAmount");
-// charAmount.addEventListener('keydown', "");
+
+var charAmountInput = charAmount.value;
+var results = "";
+
+/*var numberInput = num;
+var lowerCaseInput = lower;
+var upperCaseInput = upper;
+var symbolInput = symbol;
+*/
 
 function generatePassword () {
-  
-  
-  var results = "";
-  var charAmountInput = charAmount.value;
-  var numberInput = num;
-  var lowerCaseInput = lower;
-  var upperCaseInput = upper;
-  var symbolInput = symbol;
+
+  // if checked, include types of character (inside the for loop)
+  // iterate over string enough times to get my the number of characters
+  // i <= userInput for numbers chosen by user /2
+  // randomize character each time (generate random number, use it to call function)
+  // push command: push characters into results using if statements
+  // results = []
+  // 'pop' to get rid of commas
   
   for (var i=1; i <= 8 ;i++) {
-    results = results + numberInput + lower + upper + symbol;
+    results = results + randomNumber() + randomLower() + randomUpper() + randomSymbol();
+
   } 
   return results;
 
@@ -127,14 +118,12 @@ console.log(generatePassword());
 // Write password to the #password input
 
 function writePassword() {
-  console.log("write password is running");
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
   
   passwordText.value = password;
 }
-
-generateBtn.addEventListener("click", writePassword);
+// generateBtn.addEventListener("click", writePassword);
 
 
 // GENERATE CHARACTERS
@@ -155,8 +144,10 @@ console.log(randomUpper());
 
 // generate number
 
-var num = Math.floor(Math.random() * 10);
-console.log(num);
+function randomNumber() {
+  return String.fromCharCode(Math.floor(Math.random() * 10 + 48));
+}
+console.log(randomNumber());
 
 // generate symbol
 
@@ -168,7 +159,8 @@ console.log(randomSymbol());
 
 // VARIABLES THAT PULL CHARACTERS
 
-
+// const charAmount = document.getElementById("#charAmount")
+// charAmount.addEventListener("keydown", function);
 
 var lower = randomLower ();
 var upper = randomUpper ();
