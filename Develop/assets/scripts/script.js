@@ -33,22 +33,26 @@ Collect user input for password criteria
   var symbols = document.querySelector("#symbols")
   console.log(symbols);
 
+  
+  /*
   EVENT LISTENERS FOR BOX CHECKS
 
   numbers.addEventListener('checkbox', charTypes);
   lowCase.addEventListener('checkbox', charTypes);
   uppCase.addEventListener('checkbox', charTypes);
   symbols.addEventListener('checkbox', charTypes);
+  */
+
+  // CREATE charTypes variable
+
+  // charTypes () {}
 
 
-  CREATE charTypes variable
-
-  charTypes () {}
-
-
-  VARIABLE to combine these selections
+  // VARIABLE to combine these selections
   
-  if userSelects (enter into new variable)
+  // if userSelects (enter into new variable)
+
+/*
 
 3. randomize
 
@@ -61,10 +65,7 @@ Collect user input for password criteria
 */
 
 
-
-/* 
-
-GENERATE BUTTON
+// GENERATE BUTTON
 
 var generateBtn = document.querySelector("#generate");
 console.log(generateBtn);
@@ -84,36 +85,61 @@ console.log(generateBtn);
 
 */
 
+var num = 0
 
 var charAmountInput = charAmount.value;
-var results = "";
 
-/*var numberInput = num;
-var lowerCaseInput = lower;
-var upperCaseInput = upper;
-var symbolInput = symbol;
-*/
+// Elements
+
+var numLength = document.getElementById('charAmount');
+var lowSelect = document.getElementById('lowCase');
+var uppSelect = document.getElementById('uppCase');
+var numSelect = document.getElementById('numbers');
+var symSelect = document.getElementById('symbols');
+
 
 function generatePassword () {
-
-  // if checked, include types of character (inside the for loop)
-  // iterate over string enough times to get my the number of characters
-  // i <= userInput for numbers chosen by user /2
-  // randomize character each time (generate random number, use it to call function)
-  // push command: push characters into results using if statements
-  // results = []
-  // 'pop' to get rid of commas
   
-  for (var i=1; i <= 8 ;i++) {
-    results = results + randomNumber() + randomLower() + randomUpper() + randomSymbol();
+  var results = "";
+  var passwordLength = parseInt(numLength.value);
+  
+  if (!passwordLength || passwordLength < 8 || passwordLength > 128)
+  alert("You must type a numerical value between 8 and 128.");
+  
+  var includedCharacters = [];
+  var includeLowerCase = lowSelect.checked;
+  var includeUpperCase = uppSelect.checked;
+  var includeNumbers = numSelect.checked;
+  var includeSymbols = symSelect.checked;
 
+  if (!includeLowerCase && !includeUpperCase && !includeNumbers && !includeSymbols)
+    alert("You must select at least one type of character.");
+  
+  if (includeLowerCase) {
+      includedCharacters.push(randomLower);
   } 
+  
+  if (includeUpperCase) {
+      includedCharacters.push(randomUpper);
+  }
+
+  if (includeNumbers) {
+      includedCharacters.push(randomNumber);
+  } 
+
+  if (includeSymbols) {
+      includedCharacters.push(randomSymbol);
+  } 
+  
+  for (var i=1; i <= passwordLength ;i++) {
+    results = results 
+    + includedCharacters [Math.floor(Math.random()* includedCharacters.length)]();
+  
+  } 
+  
   return results;
 
 }
-
-generatePassword ();
-console.log(generatePassword());
 
 // Write password to the #password input
 
@@ -123,19 +149,20 @@ function writePassword() {
   
   passwordText.value = password;
 }
-// generateBtn.addEventListener("click", writePassword);
+
+generateBtn.addEventListener("click", writePassword);
 
 
 // GENERATE CHARACTERS
 
-//generate lower case letter
+// generate lower case letter
 
 function randomLower () {
   return String.fromCharCode(Math.floor(Math.random() * 26 + 97));
 }
 console.log(randomLower());
 
-//generate upper case letter
+// generate upper case letter
 
 function randomUpper () {
   return String.fromCharCode(Math.floor(Math.random() * 26 + 65));
@@ -157,14 +184,12 @@ function randomSymbol () {
 }
 console.log(randomSymbol());
 
-// VARIABLES THAT PULL CHARACTERS
 
-// const charAmount = document.getElementById("#charAmount")
-// charAmount.addEventListener("keydown", function);
 
-var lower = randomLower ();
-var upper = randomUpper ();
-var symbol = randomSymbol ();
+
+
+
+
 
 
 
