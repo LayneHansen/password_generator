@@ -89,8 +89,6 @@ var num = 0
 
 var charAmountInput = charAmount.value;
 
-// Elements
-
 var numLength = document.getElementById('charAmount');
 var lowSelect = document.getElementById('lowCase');
 var uppSelect = document.getElementById('uppCase');
@@ -98,14 +96,20 @@ var numSelect = document.getElementById('numbers');
 var symSelect = document.getElementById('symbols');
 
 
+
+
 function generatePassword () {
   
   var results = "";
   var passwordLength = parseInt(numLength.value);
   
-  if (!passwordLength || passwordLength < 8 || passwordLength > 128)
-  alert("You must type a numerical value between 8 and 128.");
-  
+  if (!passwordLength || passwordLength < 8 || passwordLength > 128) {
+  alert("You must type a numerical value between 8 and 128.")
+  results = "Please select between 8 and 128 characters."
+  return results;
+
+  } else {
+
   var includedCharacters = [];
   var includeLowerCase = lowSelect.checked;
   var includeUpperCase = uppSelect.checked;
@@ -138,6 +142,8 @@ function generatePassword () {
   } 
   
   return results;
+
+}
 
 }
 
