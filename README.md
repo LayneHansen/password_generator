@@ -18,7 +18,9 @@ I simply ask the user how many characters they need in their password, between 8
 
 ### LESSONS
 
-I learned four very important lessons. 1) Whatever you imagine, you can create using HTML, CSS, and Javascript. I tried to put myself in place of an everyday internet user. They want a simple application that is straightforward, easy to use, pleasant to look at, and easy to use. I then designed the front end of the application with these things in mind.
+I learned four very important lessons. 
+
+1) Whatever you imagine, you can create using HTML, CSS, and Javascript. I tried to put myself in place of an everyday internet user. They want a simple application that is straightforward, easy to use, pleasant to look at, and easy to use. I then designed the front end of the application with these things in mind.
 
 2) Javascript is a very difficult language, especially having just been introduced to it. I liken it to a very difficult spoken language that you've never heard before. That said, it is a robust language that allows programmers several approaches to solving the problems they've been given.
 
