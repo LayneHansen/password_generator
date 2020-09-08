@@ -15,37 +15,42 @@
      <div class="card">
         
         <div class="card-header">
-          <h2>Password Generator</h2>
+          <h2>Random Password Generator</h2>
         </div>
 
         <br>
 
         <div>
-            <label for="characters">How many characters? 8 to 128
-            </label>
-            <input type="number" id="charAmount">
-
+            <div id="char-num">
+              <label for="characters">How many characters does your password to be? 8 to 128
+              </label>
+            </div>  
+            
             <br>
+            
+            <div id="number-box">
+              <input type="number" id="charAmount">
+            </div>
 
             <h4 class="includes">Your Password Includes? You must select at least one option:</h4>
             
             <input type="checkbox" class="checkbox" id="numbers">
-            <label for="numbers">numbers</label>
+            <label for="numbers">Numbers (0-9)</label>
 
             <br><br>
             
             <input type="checkbox" class="checkbox" id="lowCase">
-            <label for="letters">lower case letters</label>
+            <label for="letters">Lower case letters (a-z)</label>
 
             <br><br>
 
             <input type="checkbox" class="checkbox" id="uppCase">
-            <label for="LETTERS">upper case letters</label>
+            <label for="LETTERS">UPPER CASE letters (A-Z)</label>
 
             <br><br>
 
             <input type="checkbox" class="checkbox" id="symbols">
-            <label for="symbols">symbols</label>
+            <label for="symbols">Symbols ( ! @ # $ % & )</label>
         </div>
 
         <br>
